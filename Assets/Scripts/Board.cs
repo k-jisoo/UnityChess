@@ -3,20 +3,17 @@ using System.Collections.Generic;
 using UnityEditor.UIElements;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UIElements;
 
-public class Board : MonoBehaviour, IPointerDownHandler
+public class Board : MonoBehaviour
 {
+    Vector3 mouseTrans;
+
     int posX = -1, posY = -1;
 
     private void Start()
     {
         Init();
-    }
-
-    public void OnPointerDown(PointerEventData eventData)
-    {
-        Debug.Log(posX);
-        Debug.Log(posY);
     }
 
     void Init() 
@@ -25,4 +22,8 @@ public class Board : MonoBehaviour, IPointerDownHandler
         posY = int.Parse(gameObject.name.Substring(1, 1));
     }
 
+    private void OnMouseDown()
+    {
+        Debug.Log(gameObject.name);
+    }
 }
