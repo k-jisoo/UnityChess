@@ -1,16 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.EventSystems;
 
-public class InputManager : MonoBehaviour
+public class Bishop : Piece
 {
-
     // Start is called before the first frame update
-    void Start()
+    protected override void Start()
     {
-        
+        base.Start();
     }
 
     // Update is called once per frame
@@ -18,6 +15,8 @@ public class InputManager : MonoBehaviour
     {
 
     }
-
-
+    public override bool IsMovable(int posX, int posY)
+    {
+        throw new System.NotImplementedException();
+    }
 }
